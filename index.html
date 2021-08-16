@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js_query_selectors</title>
+
+    <style>
+        .hideElement {
+          visibility: hidden;
+        }
+    
+        .showElement {
+          display: block;
+        }
+      </style>
+</head>
+<body>
+    <div class="mainHeading showElement">
+      <h1>Hi there People!</h1>
+    </div>
+    
+    <div class="subHeading showElement">
+      My Amazing subheading...
+    </div>
+        
+    <button onclick="contentToggle()">Toggle Content</button>
+
+</body>
+
+<script>
+
+const headings = document.querySelectorAll('div');
+    console.log(headings);
+    
+    function contentToggle() {
+        headings.forEach((heading) => {
+            if (heading.classList.contains('showElement')) {
+                heading.classList.remove('showElement');
+                heading.classList.add('hideElement');
+            } else {
+                heading.classList.remove('hideElement');
+                heading.classList.add('showElement');
+            }
+        })       
+    };
+    
+</script>
+</html>
